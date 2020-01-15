@@ -1,0 +1,57 @@
+<div class = "container signup">
+  <form (ngSubmit) = 'onSubmit()' #signCred = "ngForm">
+    <div class = "form-group">
+      <label for = "fName">First Name : </label>
+      <input type="text" id="fName" class="form-control" [(ngModel)] = "firstName" 
+        name="firstName" #fName="ngModel" placeholder="First Name" required autofocus>
+      <div [hidden] = "fName.valid || fName.pristine" class = "alert alert-danger">
+        Invalid First Name
+      </div>
+    </div>
+    <div class = "form-group">
+      <label for = "fName">Last Name : </label>
+      <input type="text" id="lName" class="form-control" [(ngModel)] = "lastName" 
+        name="lastName" #lName="ngModel" placeholder="Last Name" required >
+      <div [hidden] = "lName.valid || lName.pristine" class = "alert alert-danger">
+        Invalid Last Name
+      </div>
+    </div>
+    <div class = "form-group">
+      <label for = "mb">Mobile number : </label>
+      <input type="number" id="mb" class="form-control" [(ngModel)] = "mobile" 
+        name="mobile" #mb="ngModel" placeholder="Mobile Number" required >
+      <div [hidden] = "mb.valid || mb.pristine" class = "alert alert-danger">
+        Invalid Mobile number
+      </div>
+    </div>
+    <div class = "form-group">
+      <label for = "user">UserName : </label>
+      <input type="text" id="user" class="form-control" [(ngModel)] = "userName" 
+        name="userName" #user="ngModel" placeholder="User Name/email" required >
+      <div [hidden] = "user.valid || user.pristine" class = "alert alert-danger">
+        Invalid User Name/email
+      </div>
+    </div>
+    <div class = "form-group">
+      <label for = "pass">Password : </label>
+      <input type="password" id="pass" class="form-control" [(ngModel)] = "password" 
+        name="password" #pass="ngModel" placeholder="Password" required >
+      <div [hidden] = "pass.valid || pass.pristine" class = "alert alert-danger">
+        Invalid Password
+      </div>
+    </div>
+    <div class = "form-group">
+      <label for = "band">Job Band : </label>
+      <input type="number" id="band" class="form-control" [(ngModel)] = "jobBand" 
+        name="jobBand" #band="ngModel" placeholder="Job Band" required >
+      <div [hidden] = "band.valid || band.pristine" class = "alert alert-danger">
+        Invalid Job Band
+      </div>
+    </div>
+    
+
+    <button type="submit" class = "btn btn-primary" [disabled] = "!signCred.valid">Submit</button>
+    <button type="button" class="btn btn-primary" (click) = "signCred.reset()">Reset</button>
+  </form>
+  <br>
+</div>

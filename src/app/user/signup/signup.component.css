@@ -1,0 +1,13 @@
+.signup {
+    background-color : coral;
+    height : 85vh;
+    overflow: scroll;
+}
+
+input.ng-valid[required] {
+    border-left : 5px solid yellow;
+}
+
+input.ng-dirty.ng-invalid:not(form) {
+    border-left : 5px solid red;
+}
