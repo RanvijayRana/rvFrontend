@@ -1,3 +1,32 @@
-<p>
-  login works!
-</p>
+<div class="container" style="background-color: darksalmon; height :84vh">
+  <br />
+  <h1 style="text-align: center">Login Page</h1>
+
+  <form [formGroup]="loginForm">
+    <div class="form-group">
+      <label>User Name :</label>
+      <input type="text" class="form-control" formControlName="userName" required />
+      <p *ngIf=" loginForm.controls.userName.errors && !loginForm.controls.userName.pristine" class="alert alert-danger">
+        This field is required!
+      </p>
+    </div>
+    <div class="form-group">
+      <label>Password :</label>
+      <input type="password" class="form-control" formControlName="password" required />
+      <p *ngIf="
+          loginForm.controls.password.errors &&
+          !loginForm.controls.password.pristine
+        "
+        class="alert alert-danger">
+        This field is required!
+      </p>
+    </div>
+
+    <button type="submit" name="login" class="btn btn-primary" (click)="onLogin()">
+      Login
+    </button>
+    &nbsp; &nbsp;
+  </form>
+
+  <button type="button" name="signup" (click)="signup()" class="btn btn-primary">SignUp</button>
+</div>
